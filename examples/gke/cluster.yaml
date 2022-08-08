@@ -33,11 +33,11 @@ spec:
           capacity: 2995G
         resources:
           limits:
-            cpu: 15
-            memory: 55G
+            cpu: 30
+            memory: 115G
           requests:
-            cpu: 15
-            memory: 55G
+            cpu: 30
+            memory: 115G
         placement:
           nodeAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
