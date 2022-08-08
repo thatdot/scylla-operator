@@ -22,22 +22,22 @@ spec:
   network:
     hostNetworking: true
   datacenter:
-    name: <gcp_region>
+    name: us-central1
     racks:
-      - name: <gcp_zone>
+      - name: us-central1-c
         scyllaConfig: "scylla-config"
         scyllaAgentConfig: "scylla-agent-config"
-        members: 2
+        members: 3
         storage:
           storageClassName: local-raid-disks
           capacity: 2995G
         resources:
           limits:
-            cpu: 30
-            memory: 115G
+            cpu: 15
+            memory: 55G
           requests:
-            cpu: 30
-            memory: 115G
+            cpu: 15
+            memory: 55G
         placement:
           nodeAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
@@ -46,7 +46,7 @@ spec:
                   - key: failure-domain.beta.kubernetes.io/zone
                     operator: In
                     values:
-                      - <gcp_zone>
+                      - us-central1-c
           tolerations:
             - key: role
               operator: Equal
